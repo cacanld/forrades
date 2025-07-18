@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sticky Notes Cinta</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #fdf6f6; /* Putih dengan nuansa pink lembut */
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .sticky-note {
+      position: relative;
+      background-color: #111; /* Hitam */
+      color: white;
+      width: 500px;
+      padding: 30px 20px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      text-align: center;
+      font-size: 15px;
+    }
+
+    .corner-icon {
+      position: absolute;
+      font-size: 20px;
+    }
+
+    .corner-icon.top-left {
+      top: 10px;
+      left: 10px;
+    }
+
+    .corner-icon.top-right {
+      top: 10px;
+      right: 10px;
+    }
+
+    .corner-icon.bottom-left {
+      bottom: 10px;
+      left: 10px;
+    }
+
+    .corner-icon.bottom-right {
+      bottom: 10px;
+      right: 10px;
+    }
+
+    .back-button {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ffcccc;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .back-button:hover {
+      background-color: #ffaaaa;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sticky-note">
+    <div class="corner-icon top-left">⭐</div>
+    <div class="corner-icon top-right">❤️</div>
+    <div class="corner-icon bottom-left">🐹</div>
+    <div class="corner-icon bottom-right">🎀</div>
+
+    <p><em>Halo, sayang! This website may not be that good tapi anggap aja bagus okee? Nah disini aku cuma mau bilang kalo aku beruntung banget bisa kenal kakak, I'll never tired to say this. Dari awal ketemu, mungkin kurang nyambung tapi hari berganti dan lama lama rasa nyaman dan aman itu mulai muncul saat chatan sama kakak. Kakak mungkin bukan yang paling talkative, tapi somehow we can complete each other. 
+      Di momen kakak nembak aku, aku seneng banget dan terharu banget sama effort kakak yang rela bikin itu semua dan sampe ngelakuin itu di base. I'm really thankful for that, dan aku merasa akhirnya effort aku dikasih balik dan ngga cuma aku terus yang kasih. Aku cuma berharap kita bisa terus bareng yaa karena kalo ngga nanti dd sedih, if you have any problem with me either it's my personality or anything else, feel free to tell me about it.
+      Aku ngga akan marah, aku bakal berusaha yang terbaik untuk kakak dan diriku sendiri. Just know that I love you so much, I really do. </em></p>
+  </div>
+
+  <!-- Tombol kembali ke menu -->
+  <button class="back-button" onclick="goBackToMenu()">Back to Menu</button>
+
+  <script>
+    function goBackToMenu() {
+      window.location.href = 'menu.html'
+    }
+  </script>
+
+</body>
+</html>

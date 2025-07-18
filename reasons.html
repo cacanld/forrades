@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>50 Reasons I Love You</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background-color: #ffc1cc; /* Pink lembut */
+      font-family: 'Fredoka', sans-serif;
+      color: #d10068;
+      overflow-y: scroll;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px white;
+    }
+
+    .reasons-list {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff0f5;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .reasons-list ol {
+      list-style-type: none;
+      counter-reset: love;
+      padding-left: 0;
+    }
+
+    .reasons-list li {
+      counter-increment: love;
+      background: #ffe4ec;
+      margin: 10px 0;
+      padding: 12px 18px;
+      border-radius: 10px;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+      position: relative;
+      font-size: 18px;
+    }
+
+    .reasons-list li::before {
+      content: "💖 " counter(love) ". ";
+      font-weight: bold;
+    }
+
+    .cute-elements {
+      position: fixed;
+      bottom: 10px;
+      right: 15px;
+      font-size: 24px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .back-button {
+      display: block;
+      margin: 30px auto 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ffd6e0;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .back-button:hover {
+      background-color: #ffb6c1;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>50 Reasons Why I Love You 💕</h1>
+
+  <div class="reasons-list">
+    <ol>
+<li>You're sweet</li>
+<li>You're kind</li>
+<li>You're handsome, really handsome.</li>
+<li>You're gentle.</li>
+<li>You're cute.</li>
+<li>Your sense of humor.</li>
+<li>Your shy side.</li>
+<li>The stickers you always send to me.</li>
+<li>The emoji 👍👍 that you like.</li>
+<li>Your laugh.</li>
+<li>You're not that expressive but you always try for me.</li>
+<li>Your personality.</li>
+<li>Your caring side.</li>
+<li>The way you always notice something odd from me.</li>
+<li>You're fast at responding to me.</li>
+<li>You always appreciate my edits and others.</li>
+<li>You always call me 'cil'.</li>
+<li>Your teasing and flirty side.</li>
+<li>You always try to make me feel comfortable.</li>
+<li>You're good at making me feel butterflies in my stomach.</li>
+<li>You can be both a lover and a best friend at the same time.</li>
+<li>Your efforts.</li>
+<li>Your cute little edits for me.</li>
+<li>Your concern for everything.</li>
+<li>You don't mind to hear me yap about jan adam or jungwon.</li>
+<li>You're my favorite teddy bear to cuddle and kiss.</li>
+<li>You're always ready to accompany me until midnight if I can't sleep.</li>
+<li>Your confidence in everything.</li>
+<li>Your way to say I love you.</li>
+<li>You tried to surrender from the conversation only for me.</li>
+<li>Your love for Jake and ofcourse me.</li>
+<li>You're really charming.</li>
+<li>Always give the best words and advice.</li>
+<li>Scary but I know you care.</li>
+<li>Always ask for something that you already know the answer is.</li>
+<li>Always tried to protect me.</li>
+<li>You said I'm alay but I know you still love me WKWK.</li>
+<li>You remind me to take care of myself with sleeping and eating everyday.</li>
+<li>Have a good music taste!</li>
+<li>A good editor, i must say.</li>
+<li>Don't want to act cute but he's already cute.</li>
+<li>Dangdut everyday.</li>
+<li>Always patient when I'm throwing tantrums.</li>
+<li>Cold at first but warm when you get to know him.</li>
+<li>I love it when you show me that I don't need to be someone else to be yours.</li>
+<li>You tried to be the best for this relationship and us.</li>
+<li>Not talkative but enough to give me warm feelings.</li>
+<li>You're able to calm me down and encourage me when I'm down or sad.</li>
+<li>You always tried to be happy for me.</li>
+<li>I love you because you're Radeska Dharmavira, not anyone else but because you're someone i want to be with everyday.</li>
+    </ol>
+  </div>
+
+  <!-- Elemen lucu mengambang -->
+  <div class="cute-elements">🌸✨🐥💞</div>
+
+  <!-- Tombol kembali -->
+  <button class="back-button" onclick="goBackToMenu()">Back to Menu</button>
+
+  <script>
+    function goBackToMenu() {
+      window.location.href = 'menu.html'; // Ganti jika halaman menu beda
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Memories</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: url('heeki.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #ffffff;
+    }
+
+    .overlay {
+      background-color: rgba(255, 192, 203, 0.8); /* pink semi-transparent overlay */
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3em;
+      margin-bottom: 40px;
+      color: #fff0f5;
+      text-shadow: 2px 2px 4px #d87093;
+    }
+
+    .memory-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .memory-box {
+      background-color: #ffe4ec;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 6px 12px rgba(255, 182, 193, 0.5);
+      transition: transform 0.3s;
+    }
+
+    .memory-box:hover {
+      transform: scale(1.03);
+    }
+
+    .memory-box img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .caption {
+      font-size: 0.95em;
+      color: #6a1b44;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>Our Memories 💖</h1>
+    <div class="memory-container">
+      <div class="memory-box">
+        <img src="first.jpg" alt="First Memory" />
+        <p class="caption">Ini waktu aku sama kakak lagi foto bareng, lucu banget kan kakak punya telinga meong?</p>
+      </div>
+      <div class="memory-box">
+        <img src="second.jpg" alt="Second Memory" />
+        <p class="caption">Ini pas kita camping bareng, terus makan marshmallow sama sama. Keren banget kita berdua tuh</p>
+      </div>
+      <div class="memory-box">
+        <img src="third.jpg" alt="Third Memory" />
+        <p class="caption">Ini pas kita nonton baseball bareng, jersey nya couple an biar pada tau kita pacaran!</p>
+      </div>
+      <div class="memory-box">
+        <img src="forth.jpg" alt="Fourth Memory" />
+        <p class="caption">Ini dd malu karena kakak dangdut sama tising seharian tapi dd tetep suka kok</p>
+      </div>
+    </div>
+  </div>
+<div style="text-align: center; margin-top: 20px;">
+  <button onclick="goBackToMenu()" style="padding: 10px 20px; font-size: 16px;">Back to Menu</button>
+</div>
+
+<script>
+  function goBackToMenu() {
+    window.location.href = 'menu.html'
+  }
+</script>
+
+</body>
+</html>

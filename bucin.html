@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For My Love - Radeska</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: white;
+      background-image: radial-gradient(black 6px, transparent 7px);
+      background-size: 60px 60px;
+      font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .music-player {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border-radius: 20px;
+      padding: 25px 35px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      gap: 25px;
+      max-width: 500px;
+    }
+
+    .music-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .music-info h3 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .music-info small {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .controls {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-right: 10px;
+    }
+
+    .controls button {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .album-art {
+      width: 85px;
+      height: 85px;
+      border-radius: 15px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="music-player">
+    <div class="controls">
+      <button onclick="previousSong()">⏮️</button>
+      <button id="playBtn" ondblclick="goToMenu()">❤️</button>
+      <button onclick="nextSong()">⏭️</button>
+    </div>
+
+    <div class="music-info">
+      <h3 id="songTitle">For My Love</h3>
+      <small id="songArtist">Radeska</small>
+    </div>
+
+    <img src="heeseung.jpg" alt="Heeseung" class="album-art">
+  </div>
+
+  <audio id="audioPlayer"></audio>
+
+  <script>
+    const songs = [
+      { title: "For My Love", artist: "Radeska", file: "lagu1.mp3" },
+      { title: "With You", artist: "Radeska", file: "lagu2.mp3" },
+      { title: "Forever Love", artist: "Radeska", file: "lagu3.mp3" }
+    ];
+
+    let currentSong = 0;
+    const audio = document.getElementById('audioPlayer');
+    const title = document.getElementById('songTitle');
+    const artist = document.getElementById('songArtist');
+    const playBtn = document.getElementById('playBtn');
+
+    function loadSong(index) {
+      const song = songs[index];
+      audio.src = song.file;
+      title.textContent = song.title;
+      artist.textContent = song.artist;
+      audio.play();
+    }
+
+    function togglePlay() {
+      if (audio.src === "") {
+        loadSong(currentSong);
+      } else if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }
+
+    function nextSong() {
+      currentSong = (currentSong + 1) % songs.length;
+      loadSong(currentSong);
+    }
+
+    function previousSong() {
+      currentSong = (currentSong - 1 + songs.length) % songs.length;
+      loadSong(currentSong);
+    }
+
+    function goToMenu() {
+      window.location.href = "menu.html";
+    }
+
+    playBtn.addEventListener("click", togglePlay);
+    audio.addEventListener("ended", nextSong);
+  </script>
+
+</body>
+</html>

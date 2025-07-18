@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Menu Pilihan - Radeska</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Gloria+Hallelujah&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: #000;
+      background-image: radial-gradient(white 2px, transparent 3px);
+      background-size: 30px 30px;
+      font-family: 'Comic Neue', cursive;
+      color: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Gloria Hallelujah', cursive;
+      font-size: 3rem;
+      margin-bottom: 40px;
+      color: #ff66cc;
+      text-shadow: 2px 2px 5px #ff00cc;
+      user-select: none;
+    }
+
+    .menu-button {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: linear-gradient(135deg, #ff99cc, #ff66cc);
+      border: none;
+      border-radius: 40px;
+      box-shadow: 0 6px 12px rgba(255, 102, 204, 0.5);
+      color: #fff;
+      font-family: 'Comic Neue', cursive;
+      font-size: 1.5rem;
+      padding: 15px 30px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      user-select: none;
+      width: 320px;
+      text-align: left;
+      text-decoration: none;
+    }
+
+    .menu-button:hover {
+      transform: scale(1.05) rotate(-2deg);
+      box-shadow: 0 10px 20px rgba(255, 102, 204, 0.8);
+    }
+
+    .menu-button:active {
+      transform: scale(0.95) rotate(0deg);
+      box-shadow: 0 4px 8px rgba(255, 102, 204, 0.6);
+    }
+
+    .menu-button img {
+      width: 60px;
+      height: 60px;
+      border-radius: 15px;
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Choose Your Lovely Page!</h1>
+
+  <a href="memories.html" class="menu-button">
+    <img src="heeseung1.jpg" alt="Our Memories" />
+    Our Memories
+  </a>
+  <a href="mylove.html" class="menu-button">
+    <img src="heeseung2.jpg" alt="My Love" />
+    My Love
+  </a>
+  <a href="reasons.html" class="menu-button">
+    <img src="heeseung3.jpg" alt="Reasons" />
+    Reasons
+  </a>
+  <a href="diary.html" class="menu-button">
+    <img src="heeseung4.jpg" alt="Diary for You" />
+    Diary for You
+  </a>
+
+</body>
+</html>

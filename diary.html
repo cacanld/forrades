@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Diary Kita</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Quicksand', sans-serif;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding-top: 50px;
+    }
+
+    #login-screen {
+      text-align: center;
+    }
+
+    #login-screen input {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    #login-screen button {
+      padding: 10px 20px;
+      margin-top: 15px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #4caf50;
+      color: white;
+      cursor: pointer;
+    }
+
+    #notification {
+      background-color: #f0f0f0;
+      border: 1px solid #aaa;
+      padding: 10px 20px;
+      border-radius: 10px;
+      display: inline-block;
+      margin-bottom: 15px;
+      animation: vibrate 0.4s infinite;
+    }
+
+    @keyframes vibrate {
+      0% { transform: translateX(-1px); }
+      25% { transform: translateX(1px); }
+      50% { transform: translateX(-1px); }
+      75% { transform: translateX(1px); }
+      100% { transform: translateX(0); }
+    }
+
+    #diary-container {
+      display: none;
+      flex-direction: column;
+      gap: 30px;
+      width: 90%;
+      max-width: 800px;
+      margin-bottom: 50px;
+    }
+
+    .diary-box {
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .diary-box textarea {
+      width: 100%;
+      height: 150px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 15px;
+      resize: none;
+    }
+
+    .diary-box h3 {
+      margin-top: 0;
+    }
+
+    #submitBtn {
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    #submitted-diary {
+      margin-top: 30px;
+      background-color: #fff0f5;
+      padding: 20px;
+      border-radius: 15px;
+      border: 1px dashed #ff69b4;
+    }
+
+    /* Animasi lucu */
+    .go-away {
+      color: red;
+      font-size: 20px;
+      animation: bounce 0.5s infinite;
+      margin-top: 20px;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .fireworks {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 28px;
+      animation: explode 1s ease-out forwards;
+    }
+
+    @keyframes explode {
+      0% { opacity: 0; transform: scale(0.5) translateX(-50%); }
+      100% { opacity: 1; transform: scale(1.2) translateX(-50%); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Login Screen -->
+  <div id="login-screen">
+    <div id="notification">🔔 Notifikasi: Masukkan username untuk buka diary</div>
+    <input type="text" id="usernameInput" placeholder="Masukkan username..." />
+    <br/>
+    <button onclick="validateUser()">Masuk</button>
+    <div id="responseMessage"></div>
+  </div>
+
+  <!-- Diary Container -->
+  <div id="diary-container">
+    <div class="fireworks" id="welcomeMsg">🎆 Welcome Radeska! 🎆</div>
+
+    <div class="diary-box">
+      <h3>📔 Hanniels Diary</h3>
+      <textarea id="myDiary" maxlength="3000" placeholder="Dear diary, I just met a cute guy on 25 June 2025 named Radeska. I thought he was just another ordinary guy that won't have something important in my life but turns out he's important now. He's not expressive or talkative, but he's caring and gentle in his own way. Maybe he looks like he's cold but deep inside, he's not. I have never met someone like this before but his behavior always warms my heart. I fell in love with him after a few days, he's able to make me feel safe and comfortable with him. I'm not scared to be who i am and act like a fool with him. I know I have loved him with all my heart since that day, I never regret that God let me meet him that day. I couldn't imagine if i didn't tap his id and send him a chat, probably I was a crying mess now wkwk but turns out God still has a good plan for me with him coming into my life. Radeska, I can't say anything else again except i love you."></textarea>
+    </div>
+
+    <div class="diary-box">
+      <h3>📓 Your Diary</h3>
+      <textarea id="theirDiary" maxlength="3000" placeholder="Silakan tulis di sini..."></textarea>
+    </div>
+
+    <button id="submitBtn" onclick="submitDiary()">Submit Diary</button>
+
+    <div id="submitted-diary"></div>
+  </div>
+
+  <script>
+    function validateUser() {
+      const username = document.getElementById("usernameInput").value.trim();
+      const message = document.getElementById("responseMessage");
+      const diaryContainer = document.getElementById("diary-container");
+
+      if (username === "palladiumsx") {
+        document.getElementById("login-screen").style.display = "none";
+        diaryContainer.style.display = "flex";
+        message.innerHTML = "";
+
+        // Show welcome fireworks
+        const firework = document.getElementById("welcomeMsg");
+        firework.style.display = "block";
+        setTimeout(() => { firework.style.display = "none"; }, 3000);
+      } else {
+        message.innerHTML = `<div class="go-away">🚫 Go away! You're not Radeska!</div>`;
+      }
+    }
+
+    function submitDiary() {
+      const myDiaryText = document.getElementById("myDiary").value.trim();
+      const theirDiaryText = document.getElementById("theirDiary").value.trim();
+
+      const submitted = document.getElementById("submitted-diary");
+      submitted.innerHTML = `
+        <h3>📖 Diary dari Dia untuk Aku</h3>
+        <p style="white-space: pre-wrap; color: #d10068;">${theirDiaryText || "<em>(belum ada isi)</em>"}</p>
+      `;
+    }
+  </script>
+
+</body>
+</html>
